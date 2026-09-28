@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ComicCraft — Create a Comic</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<main class="page">
+  <section class="hero">
+    <p class="eyebrow">AI COMIC STORY CREATOR</p>
+    <h1>Turn an idea into a comic.</h1>
+    <p>Describe your story and ComicCraft builds a five-panel story, illustrations and a downloadable PDF.</p>
+  </section>
+
+  {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+
+  <section class="card">
+    <form action="/generate" method="post" id="comic-form">
+      <label>
+        Story prompt
+        <textarea name="story_prompt" maxlength="1200" required
+          placeholder="A brave fox explores an enchanted forest and discovers a forgotten moon temple."></textarea>
+      </label>
+
+      <div class="grid">
+        <label>Main character
+          <input name="character_name" maxlength="80" required placeholder="Kavi">
+        </label>
+        <label>Setting
+          <select name="setting">
+            <option>enchanted forest</option><option>school</option>
+            <option>space station</option><option>future city</option>
+            <option>underwater kingdom</option><option>custom</option>
+          </select>
+        </label>
+        <label>Story tone
+          <select name="tone">
+            <option>light-hearted</option><option>dramatic</option>
+            <option>poetic</option><option>funny</option><option>mysterious</option>
+          </select>
+        </label>
+        <label>Art style
+          <select name="art_style">
+            <option>comic book</option><option>anime</option>
+            <option>pixel art</option><option>watercolor</option><option>realistic</option>
+          </select>
+        </label>
+      </div>
+
+      <button type="submit" id="submit-btn">Create My Comic</button>
+    </form>
+  </section>
+
+  <section class="info-grid">
+    <div><strong>01</strong><span>Gemini outline</span></div>
+    <div><strong>02</strong><span>Story & dialogue</span></div>
+    <div><strong>03</strong><span>Panel artwork</span></div>
+    <div><strong>04</strong><span>PDF export</span></div>
+  </section>
+</main>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

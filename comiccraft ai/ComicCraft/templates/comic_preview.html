@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ComicCraft — Preview</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<main class="page wide">
+  <section class="hero compact">
+    <p class="eyebrow">COMIC PREVIEW</p>
+    <h1>Your story is ready.</h1>
+    <p>Review each panel, then export the complete comic as a PDF.</p>
+    <div class="actions">
+      <a class="button" href="{{ pdf_url }}" download>Download Your Comic as PDF</a>
+      <a class="button secondary" href="/">Create Another Comic</a>
+    </div>
+  </section>
+
+  {% for panel in layout %}
+  <article class="panel card">
+    <div class="panel-heading">
+      <span>Panel {{ panel.panel_number }}</span>
+      <h2>{{ panel.title }}</h2>
+    </div>
+    <div class="panel-body">
+      <img src="{{ panel.image_url }}" alt="Comic illustration for panel {{ panel.panel_number }}">
+      <div class="story-copy">
+        <p class="scene"><em>{{ panel.scene_description }}</em></p>
+        {% if panel.caption %}<p><strong>Caption:</strong> {{ panel.caption }}</p>{% endif %}
+        {% if panel.narration %}<p><strong>Narration:</strong> {{ panel.narration }}</p>{% endif %}
+        {% if panel.dialogue %}<p><strong>Dialogue:</strong> {{ panel.dialogue }}</p>{% endif %}
+        <details><summary>Image prompt reference</summary><p>{{ panel.image_prompt }}</p></details>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</main>
+</body>
+</html>

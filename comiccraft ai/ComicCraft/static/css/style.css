@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f4efe7;color:#1e1e1e}
+.page{width:min(980px,92%);margin:0 auto;padding:50px 0}
+.wide{max-width:1120px}.centered{min-height:100vh;display:grid;place-items:center}
+.hero{text-align:center;padding:30px 0 25px}.hero.compact{padding-bottom:30px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:3px}
+.hero h1{font-size:clamp(38px,7vw,72px);line-height:.95;margin:12px 0}
+.hero p{max-width:700px;margin:0 auto;line-height:1.6}
+.card{background:#fff;border:1px solid #ddd3c5;border-radius:22px;box-shadow:0 18px 50px #00000012}
+.card form{padding:28px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+label{display:block;font-weight:700}
+textarea,input,select{width:100%;margin-top:8px;border:1px solid #cfc4b5;border-radius:12px;padding:13px;font:inherit;background:#fff}
+textarea{min-height:150px;resize:vertical}
+button,.button{display:inline-block;border:0;border-radius:999px;padding:14px 22px;margin-top:22px;background:#1e1e1e;color:#fff;font-weight:800;text-decoration:none;cursor:pointer}
+.button.secondary{background:#eee7dd;color:#1e1e1e;margin-left:8px}
+.actions{text-align:center}.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.info-grid div{background:#fff;padding:18px;border-radius:16px;border:1px solid #ddd3c5}
+.info-grid strong{display:block;font-size:22px}.info-grid span{font-size:13px}
+.alert{background:#fff0f0;border:1px solid #e1a5a5;color:#8d1d1d;padding:14px 18px;border-radius:14px;margin-bottom:18px}
+.panel{margin:28px 0;overflow:hidden}.panel-heading{padding:22px 26px;border-bottom:1px solid #e5ddd2}
+.panel-heading span{font-size:12px;font-weight:800;letter-spacing:2px}.panel-heading h2{margin:5px 0 0;font-size:30px}
+.panel-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.panel-body img{width:100%;height:100%;min-height:420px;object-fit:cover;background:#eee}
+.story-copy{padding:28px;font-size:16px;line-height:1.65}.scene{font-size:18px}
+.story-copy details{margin-top:20px;background:#f6f1e9;padding:12px;border-radius:12px}
+.success{text-align:center;padding:50px}.success-icon{font-size:60px}
+@media(max-width:700px){.grid,.panel-body{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}.panel-body img{min-height:300px}.button.secondary{margin-left:0;margin-top:10px}}
